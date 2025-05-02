@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS user_service;
+GRANT ALL PRIVILEGES ON DATABASE user_service TO postgres;

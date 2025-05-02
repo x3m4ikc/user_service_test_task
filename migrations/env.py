@@ -5,7 +5,7 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from user_service.db.engine import DB_HOST, DB_USER, DB_NAME, DB_PASS, DB_PORT
+from config_reader import config as env_config
 from user_service.db.models import User
 
 # this is the Alembic Config object, which provides
@@ -13,6 +13,12 @@ from user_service.db.models import User
 config = context.config
 
 section = config.config_ini_section
+
+DB_USER = env_config.db_user.get_secret_value()
+DB_NAME = env_config.db_name.get_secret_value()
+DB_PASS = env_config.db_pass.get_secret_value()
+DB_PORT = env_config.db_port.get_secret_value()
+DB_HOST = env_config.db_host.get_secret_value()
 
 config.set_section_option(section, "DB_HOST", DB_HOST)
 config.set_section_option(section, "DB_USER", DB_USER)

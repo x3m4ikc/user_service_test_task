@@ -2,7 +2,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_asyn
 from sqlalchemy import MetaData
 from sqlalchemy.orm import declarative_base
 
-from user_service.config_reader import config
+from config_reader import config
 
 DB_USER = config.db_user.get_secret_value()
 DB_NAME = config.db_name.get_secret_value()

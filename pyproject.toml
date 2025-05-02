@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "user-service"
+version = "0.1.0"
+description = ""
+authors = ["Timur <x3m4ikc@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+litestar = {extras = ["standard"], version = "^2.15.2"}
+advanced-alchemy = "^1.4.1"
+pydantic-settings = "^2.9.1"
+python-dotenv = "^1.1.0"
+asyncpg = "^0.30.0"
+psycopg2 = "^2.9.10"
+bcrypt = "^4.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
